@@ -1,0 +1,154 @@
+__opapp_include(../lib/html/optinomic/page/start.m4)
+<div ng-repeat="response in d.dataMain.survey_responses">
+    <div>
+        <div class="grid-border-bottom" layout="row" layout-xs="row" layout-gt-xs="row" layout-align="space-between center">
+            <h4 class="md-headline">Gesamtzufriedenheit</h4>
+            <div>
+                <p class="small">{{response.calculations[0].calculation_result.response.data.response.datestamp | date}}
+                    <br><small>{{d.dataMain.apps.current.name}}</small></p>
+            </div>
+        </div>
+        <p class="md-body-1" style="margin-top: 12px;">Summe von <strong>{{response.calculations[0].calculation_result.ZuePaZ.full_score}}</strong> Punkte (bei {{response.calculations[0].calculation_result.ZuePaZ.full_count}} von 31 beantworteten Fragen)</p>
+        <div layout="row" layout-xs="column" layout-gt-xs="row" layout-align="start center">
+            <div flex="45">
+                <h5 class="md-subhead">
+                    Mittelwerte und Interpretation
+                </h5>
+                <table class="table table-condensed" style="width: 80%;">
+                    <tr ng-repeat="range in d.scale_ranges.ranges">
+                        <td style="text-align:right !important;">
+                            <small>{{range.from}}-{{range.to}}&nbsp;</small>
+                        </td>
+                        <td>
+                            <small>{{range.result}}</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div flex="55">
+                <score-threshold score="response.calculations[0].calculation_result.ZuePaZ.full_mean" min="0" max="3" show-percent-scale="true" scale-ranges="d.scale_ranges" show-min-max="true"></score-threshold>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 48px;">
+        <div class="grid-border-bottom" layout="row" layout-xs="column" layout-gt-xs="row" layout-align="space-between center">
+            <h4 class="md-headline">Zufriedenheit mit dem Eintritt</h4>
+            <div>
+                <p class="small">{{response.calculations[0].calculation_result.response.data.response.datestamp | date}}
+                    <br><small>{{d.dataMain.apps.current.name}}</small></p>
+            </div>
+        </div>
+        <p class="md-body-1" style="margin-top: 12px;">Summe von <strong>{{response.calculations[0].calculation_result.ZuePaZ.eintritt_score}}</strong> Punkten (bei {{response.calculations[0].calculation_result.ZuePaZ.eintritt_count}} von 2 beantworteten Fragen)</p>
+        <div layout="row" layout-xs="column" layout-gt-xs="row" layout-align="start center">
+            <div flex="45">
+                <h5 class="md-subhead">
+                    Mittelwerte und Interpretation
+                </h5>
+                <table class="table table-condensed" style="width: 80%;">
+                    <tr ng-repeat="range in d.scale_ranges.ranges">
+                        <td style="text-align:right !important;">
+                            <small>{{range.from}}-{{range.to}}&nbsp;</small>
+                        </td>
+                        <td>
+                            <small>{{range.result}}</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div flex="55">
+                <score-threshold score="response.calculations[0].calculation_result.ZuePaZ.eintritt_mean" min="0" max="3" show-percent-scale="true" scale-ranges="d.scale_ranges" show-min-max="true"></score-threshold>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 48px;">
+        <div class="grid-border-bottom" layout="row" layout-xs="column" layout-gt-xs="row" layout-align="space-between center">
+            <h4 class="md-headline">Zufriedenheit mit dem Aufenthalt</h4>
+            <div>
+                <p class="small">{{response.calculations[0].calculation_result.response.data.response.datestamp | date}}
+                    <br><small>{{d.dataMain.apps.current.name}}</small></p>
+            </div>
+        </div>
+        <p class="md-body-1" style="margin-top: 12px;">Summe von <strong>{{response.calculations[0].calculation_result.ZuePaZ.aufenthalt_score}}</strong> Punkten (bei {{response.calculations[0].calculation_result.ZuePaZ.aufenthalt_count}} von 3 beantworteten Fragen)</p>
+        <div layout="row" layout-xs="column" layout-gt-xs="row" layout-align="start center">
+            <div flex="45">
+                <h5 class="md-subhead">
+                    Mittelwerte und Interpretation
+                </h5>
+                <table class="table table-condensed" style="width: 80%;">
+                    <tr ng-repeat="range in d.scale_ranges.ranges">
+                        <td style="text-align:right !important;">
+                            <small>{{range.from}}-{{range.to}}&nbsp;</small>
+                        </td>
+                        <td>
+                            <small>{{range.result}}</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div flex="55">
+                <score-threshold score="response.calculations[0].calculation_result.ZuePaZ.aufenthalt_mean" min="0" max="3" show-percent-scale="true" scale-ranges="d.scale_ranges" show-min-max="true"></score-threshold>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 48px;">
+        <div class="grid-border-bottom" layout="row" layout-xs="column" layout-gt-xs="row" layout-align="space-between center">
+            <h4 class="md-headline">Zufriedenheit mit der Behandlung</h4>
+            <div>
+                <p class="small">{{response.calculations[0].calculation_result.response.data.response.datestamp | date}}
+                    <br><small>{{d.dataMain.apps.current.name}}</small></p>
+            </div>
+        </div>
+        <p class="md-body-1" style="margin-top: 12px;">Summe von <strong>{{response.calculations[0].calculation_result.ZuePaZ.behandlung_score}}</strong> Punkten (bei {{response.calculations[0].calculation_result.ZuePaZ.behandlung_count}} von 20 beantworteten Fragen)</p>
+        <div layout="row" layout-xs="column" layout-gt-xs="row" layout-align="start center">
+            <div flex="45">
+                <h5 class="md-subhead">
+                    Mittelwerte und Interpretation
+                </h5>
+                <table class="table table-condensed" style="width: 80%;">
+                    <tr ng-repeat="range in d.scale_ranges.ranges">
+                        <td style="text-align:right !important;">
+                            <small>{{range.from}}-{{range.to}}&nbsp;</small>
+                        </td>
+                        <td>
+                            <small>{{range.result}}</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div flex="55">
+                <score-threshold score="response.calculations[0].calculation_result.ZuePaZ.behandlung_mean" min="0" max="3" show-percent-scale="true" scale-ranges="d.scale_ranges" show-min-max="true"></score-threshold>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 48px;">
+        <div class="grid-border-bottom" layout="row" layout-xs="column" layout-gt-xs="row" layout-align="space-between center">
+            <h4 class="md-headline">Zufriedenheit mit dem Austritt</h4>
+            <div>
+                <p class="small">{{response.calculations[0].calculation_result.response.data.response.datestamp | date}}
+                    <br><small>{{d.dataMain.apps.current.name}}</small></p>
+            </div>
+        </div>
+        <p class="md-body-1" style="margin-top: 12px;">Summe von <strong>{{response.calculations[0].calculation_result.ZuePaZ.austritt_score}}</strong> Punkten (bei {{response.calculations[0].calculation_result.ZuePaZ.austritt_count}} von 6 beantworteten Fragen)</p>
+        <div layout="row" layout-xs="column" layout-gt-xs="row" layout-align="start center">
+            <div flex="45">
+                <h5 class="md-subhead">
+                    Mittelwerte und Interpretation
+                </h5>
+                <table class="table table-condensed" style="width: 80%;">
+                    <tr ng-repeat="range in d.scale_ranges.ranges">
+                        <td style="text-align:right !important;">
+                            <small>{{range.from}}-{{range.to}}&nbsp;</small>
+                        </td>
+                        <td>
+                            <small>{{range.result}}</small>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div flex="55">
+                <score-threshold score="response.calculations[0].calculation_result.ZuePaZ.austritt_mean" min="0" max="3" show-percent-scale="true" scale-ranges="d.scale_ranges" show-min-max="true"></score-threshold>
+            </div>
+        </div>
+    </div>
+</div>
+__opapp_include(../lib/html/optinomic/page/end.m4)
